@@ -22,16 +22,5 @@ for _ in range(5):
     idx = np.random.randint(0, n)
     df.loc[idx, 'Calories'] = np.nan
 
-#  DATA CLEANING 
-# Check missing values
-print("Missing values:\n", df.isnull().sum())
-
-# Fill missing Calories with mean
-df['Calories'].fillna(df['Calories'].mean(), inplace=True)
-
-# Basic statistics
-print("\nData description:\n", df.describe())
-
 # Save cleaned DataFrame
 df.to_csv('data/Exercise1_Cleaned.csv', index=False)
-print("\nCleaned DataFrame saved to data/Exercise1_Cleaned.csv")
